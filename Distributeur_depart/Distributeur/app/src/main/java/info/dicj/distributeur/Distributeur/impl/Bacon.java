@@ -1,7 +1,9 @@
 package info.dicj.distributeur.Distributeur.impl;
 
-public class Bacon {
-    public Bacon(){
+import info.dicj.distributeur.Distributeur.Saveur;
 
+public class Bacon extends Saveur {
+    public Bacon(){
+        super("Bacon","Je suis du bon bacon");
     }
 }
