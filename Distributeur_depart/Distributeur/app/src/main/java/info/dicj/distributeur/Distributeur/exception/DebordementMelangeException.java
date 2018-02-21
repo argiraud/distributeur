@@ -1,4 +1,7 @@
-package Distributeur.exception;
+package info.dicj.distributeur.Distributeur.exception;
 
-public class DebordementMelangeException {
+public class DebordementMelangeException extends Exception{
+    public DebordementMelangeException(){
+        System.out.println("Le mélange déborde !!!");
+    }
 }

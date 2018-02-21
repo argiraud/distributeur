@@ -5,16 +5,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import info.dicj.distributeur.Distributeur.Distributeur;
+import info.dicj.distributeur.Distributeur.exception.AucunDistribuableException;
+import info.dicj.distributeur.Distributeur.exception.AucunMelangeException;
+import info.dicj.distributeur.Distributeur.exception.DebordementMelangeException;
+
 public class MainActivity extends AppCompatActivity {
 
-    //private Distributeur distributeur;
+    private Distributeur distributeur;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // distributeur = new Distributeur();
+         distributeur = new Distributeur();
 
         Log.i("DICJ", "MainActivity.oncreate");
     }
@@ -23,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i("DICJ", "MainActivity.reverser");
 
-        /*
+
         try {
             distributeur.dupliquerMelange();
             verser(view);
@@ -34,21 +39,22 @@ public class MainActivity extends AppCompatActivity {
         } catch (DebordementMelangeException e) {
             e.printStackTrace();
         }
-        */
+
+
     }
 
     public void verser(View view) {
 
         Log.i("DICJ", "MainActivity.verser");
 
-        /*
+
         try {
             afficherRecette(distributeur.melangerRecette());
 
         } catch (AucunMelangeException e) {
             e.printStackTrace();
         }
-        */
+
     }
 
 

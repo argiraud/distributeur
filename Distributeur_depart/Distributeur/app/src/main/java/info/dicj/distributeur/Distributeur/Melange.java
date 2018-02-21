@@ -4,7 +4,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
-public class Melange {
+public class Melange implements Recette{
     
     private int nbBoissons;
     private final int MAX_BOISSON=2;
@@ -42,10 +42,7 @@ public class Melange {
     }
     
     public boolean estPret(){
-        if(boissons.size()>0){
-            return true;
-        }
-        return false;
+       return !this.boissons.isEmpty();
     }
 }
 
