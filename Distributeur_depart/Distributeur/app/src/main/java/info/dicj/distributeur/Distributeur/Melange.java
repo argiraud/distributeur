@@ -19,26 +19,31 @@ public class Melange implements Recette{
     
     public void ajouterBoisson(Boisson boisson){
         if (nbBoissons<MAX_BOISSON){
+            boisson.ajouter();
             boissons.add(boisson);
+
         }
         else Log.i("DICJ", "Maximum de boissons atteint");
     }
     
-    public void ajouterSaveur(Saveur saveur){
-        if (this.saveur==null)
-            this.saveur=saveur;
+    public void ajouterSaveur(Saveur saveur) {
+        if (this.saveur == null){
+            this.saveur = saveur;
+            this.saveur.ajouter();
+        }
         else Log.i("DICJ", "Maximum de saveur atteint");
     }
     
     public String getInformation(){
         String lesBoissons = new String();
-        for (Boisson boisson:boissons) {
-            lesBoissons=lesBoissons+boisson.toString();
+        for (int i=0; i<boissons.size(); i++) {
+            lesBoissons= boissons.get(i).toString();
         }
-        if(this.saveur!=null)
-        return "Melange : -Boissons("+lesBoissons+")  -Saveur : "+saveur.toString();
+        if(this.saveur!=null) {
+            return "Melange :\n- Boissons : " + lesBoissons + ")\n- Saveur : " + saveur.toString();
+        }
         else{
-            return "Melange : -Boissons("+lesBoissons+")";
+            return "Melange : \n-Boissons : "+lesBoissons;
         }
     }
     

@@ -6,6 +6,10 @@ import java.util.ArrayList;
 
 import info.dicj.distributeur.Distributeur.exception.AucunMelangeException;
 import info.dicj.distributeur.Distributeur.exception.DebordementMelangeException;
+import info.dicj.distributeur.Distributeur.impl.Fraise;
+import info.dicj.distributeur.Distributeur.impl.Orangeade;
+import info.dicj.distributeur.Distributeur.impl.Pepsi;
+import info.dicj.distributeur.Distributeur.impl.Racinette;
 
 public class Distributeur {
 
@@ -19,10 +23,20 @@ public class Distributeur {
         this.melangePrecedent = new Melange();
         this.boissons = new ArrayList<>();
         this.saveurs = new ArrayList<>();
+        remplirDistributeur();
     }
 
     private void remplirDistributeur(){
-
+        for (int i=0;i<10;i++){
+            Boisson pepsi = new Pepsi();
+            boissons.add(pepsi);
+            Boisson orangeade = new Orangeade();
+            boissons.add(orangeade);
+            Boisson racinette = new Racinette();
+            boissons.add(racinette);
+            Boisson fraise = new Fraise();
+            boissons.add(fraise);
+        }
 
     }
 
