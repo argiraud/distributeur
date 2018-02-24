@@ -4,6 +4,9 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
+import info.dicj.distributeur.Distributeur.exception.AucunMelangeException;
+import info.dicj.distributeur.Distributeur.exception.DebordementMelangeException;
+
 public class Distributeur {
 
     private ArrayList<Boisson> boissons;
@@ -20,16 +23,20 @@ public class Distributeur {
 
     private void remplirDistributeur(){
 
+
     }
 
-    public Recette melangerRecette(){
-        for(Boisson bois : boissons){
-            melangeCourant.ajouterBoisson(bois);
+    public Recette melangerRecette() throws AucunMelangeException {
+        if (boissons.isEmpty()) throw new AucunMelangeException();
+        else {
+            for (Boisson bois : boissons) {
+                melangeCourant.ajouterBoisson(bois);
+            }
+            for (Saveur sav : saveurs) {
+                melangeCourant.ajouterSaveur(sav);
+            }
+            return this.melangeCourant;
         }
-        for(Saveur sav : saveurs){
-            melangeCourant.ajouterSaveur(sav);
-        }
-        return (Recette)melangeCourant;
     }
 
 
@@ -38,25 +45,31 @@ public class Distributeur {
         this.melangeCourant = null;
     }
 
-    public Recette dupliquerMelange(){
-        this.melangePrecedent = this.melangeCourant;
+    public Recette dupliquerMelange() throws AucunMelangeException {
+            if (this.melangeCourant == null) {
+                throw new AucunMelangeException();
+            }
+            else {
+                this.melangePrecedent = this.melangeCourant;
 
+                return this.melangeCourant;
+            }
     }
 
-    public void ajouterBoisson(String nom){
+    public void ajouterBoisson(String nom) throws DebordementMelangeException {
         if(boissons.size()<2){
             boissons.add(new Boisson(nom,"je suis la description de "+nom));
         }
         else{
             Log.i("DICJ", "Distributeur.ajouterBoisson: Erreur + de 2 boissons");
-            //lancé une exception
+            throw new DebordementMelangeException();
         }
     }
 
-    public void ajouterSaveur(String nom){
+    public void ajouterSaveur(String nom) throws DebordementMelangeException {
         if(!saveurs.isEmpty()){
             Log.i("DICJ", "Distributeur.ajouterSaveur: Erreur il y a déjà une saveur");
-            //lancé une exception
+            throw new DebordementMelangeException();
         }
         else{
             saveurs.add(new Saveur(nom,"Je suis la description de "+nom));

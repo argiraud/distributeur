@@ -14,6 +14,7 @@ public class Melange implements Recette{
     public Melange(){
         nbBoissons=0;
         boissons=new ArrayList<>();
+        saveur = null;
     }
     
     public void ajouterBoisson(Boisson boisson){
@@ -34,15 +35,21 @@ public class Melange implements Recette{
         for (Boisson boisson:boissons) {
             lesBoissons=lesBoissons+boisson.toString();
         }
+        if(this.saveur!=null)
         return "Melange : -Boissons("+lesBoissons+")  -Saveur : "+saveur.toString();
+        else{
+            return "Melange : -Boissons("+lesBoissons+")";
+        }
     }
     
     public Recette getRecette(){
-        return (Recette)this;
+        return this;
     }
     
     public boolean estPret(){
        return !this.boissons.isEmpty();
     }
+
+
 }
 

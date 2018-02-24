@@ -1,14 +1,17 @@
 package info.dicj.distributeur;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import info.dicj.distributeur.Distributeur.Distributeur;
 import info.dicj.distributeur.Distributeur.exception.AucunDistribuableException;
 import info.dicj.distributeur.Distributeur.exception.AucunMelangeException;
 import info.dicj.distributeur.Distributeur.exception.DebordementMelangeException;
+import info.dicj.distributeur.Distributeur.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,14 +35,17 @@ public class MainActivity extends AppCompatActivity {
         try {
             distributeur.dupliquerMelange();
             verser(view);
-        } catch (AucunMelangeException e) {
-            e.printStackTrace();
-        } catch (AucunDistribuableException e) {
-            e.printStackTrace();
-        } catch (DebordementMelangeException e) {
+        }
+        catch (AucunMelangeException e) {
             e.printStackTrace();
         }
-
+       /* catch (AucunDistribuableException e) {
+            e.printStackTrace();
+        }
+        catch (DebordementMelangeException e) {
+            e.printStackTrace();
+        }
+*/
 
     }
 
@@ -49,11 +55,16 @@ public class MainActivity extends AppCompatActivity {
 
 
         try {
+
             afficherRecette(distributeur.melangerRecette());
 
         } catch (AucunMelangeException e) {
             e.printStackTrace();
         }
+        /*catch (AucunDistribuableException e) {
+            e.printStackTrace();
+        }
+        */
 
     }
 
@@ -62,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i("DICJ", "MainActivity.ajouterSaveur");
 
-        /*
+
         try {
             switch(view.getId()){
 
@@ -73,19 +84,21 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.sBacon:       distributeur.ajouterSaveur("BACON");
                                         break;
             }
-        } catch (AucunDistribuableException e) {
+        } /*
+        catch (AucunDistribuableException e) {
             e.printStackTrace();
-        } catch (DebordementMelangeException e) {
+        }*/
+        catch (DebordementMelangeException e) {
             e.printStackTrace();
         }
-        */
+
     }
 
     public void ajouterBoisson(View view) {
 
         Log.i("DICJ", "MainActivity.ajouterBoisson");
 
-        /*
+
         try {
             switch(view.getId()){
                 case R.id.bPepsi:       distributeur.ajouterBoisson("PEPSI");
@@ -97,24 +110,25 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.bFraise:      distributeur.ajouterBoisson("FRAISE");
                                         break;
             }
-        } catch (AucunDistribuableException e) {
+        } /*catch (AucunDistribuableException e) {
             e.printStackTrace();
-        } catch (DebordementMelangeException e) {
+        } */
+        catch (DebordementMelangeException e) {
             e.printStackTrace();
         }
-        */
+
     }
 
     public void nouveau(View view) {
 
         Log.i("DICJ", "MainActivity.nouveau");
 
-        /*
+
         distributeur.nouveauMelange();
-        */
+
     }
 
-    /*
+
     public void afficherRecette(Recette recette){
 
 
@@ -124,6 +138,11 @@ public class MainActivity extends AppCompatActivity {
 
         Toast toast = Toast.makeText(context, information, duree);
         toast.show();
+        Log.i("DICJ", "MainActivity.afficherRecette"+information);
     }
-    */
+
+    public Context getContext(){
+        return getApplicationContext();
+    }
+
 }
