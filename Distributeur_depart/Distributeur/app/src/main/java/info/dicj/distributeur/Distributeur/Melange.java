@@ -38,7 +38,7 @@ public class Melange implements Recette{
     }
     
     public Recette getRecette(){
-        return (Recette)this;
+        return this;
     }
     
     public boolean estPret(){
