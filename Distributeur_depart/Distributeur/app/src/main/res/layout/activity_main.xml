@@ -12,7 +12,7 @@
     tools:context="info.dicj.distributeur.MainActivity">
 
     <TextView
-        android:text="Super Distributeur DICJ"
+        android:text="Super Distributeur du FUTUR DICJ"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView" />

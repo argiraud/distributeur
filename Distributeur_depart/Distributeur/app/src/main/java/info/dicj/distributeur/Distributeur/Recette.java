@@ -1,5 +1,5 @@
 package info.dicj.distributeur.Distributeur;
 
-interface  Recette {
-
+public interface  Recette {
+    String getInformation();
 }
