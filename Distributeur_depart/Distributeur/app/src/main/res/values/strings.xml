@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Distributeur</string>
+    <string name="gingembre">gingembre</string>
+    <string name="bacon">Bacon</string>
+    <string name="epice">Epice</string>
+    <string name="les_saveurs">Les Saveurs:</string>
+    <string name="fraise">Fraise</string>
+    <string name="racinette">Racinette</string>
+    <string name="orangeade">Orangeade</string>
+    <string name="pepsi">Pepsi</string>
 </resources>

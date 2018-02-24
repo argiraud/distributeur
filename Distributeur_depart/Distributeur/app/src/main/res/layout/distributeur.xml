@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/text_les_saveurs"
             android:onClick="ajouterSaveur"
-            android:text="@string/pice" />
+            android:text="@string/epice" />
 
         <Button
             android:id="@+id/sBacon"
