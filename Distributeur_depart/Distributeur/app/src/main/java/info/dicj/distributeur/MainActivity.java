@@ -5,6 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import info.dicj.distributeur.Distributeur.Distributeur;
@@ -13,9 +19,12 @@ import info.dicj.distributeur.Distributeur.exception.AucunMelangeException;
 import info.dicj.distributeur.Distributeur.exception.DebordementMelangeException;
 import info.dicj.distributeur.Distributeur.*;
 
+import static android.view.View.GONE;
+
 public class MainActivity extends AppCompatActivity {
 
     private Distributeur distributeur;
+    private String nom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,6 +152,32 @@ public class MainActivity extends AppCompatActivity {
 
     public Context getContext(){
         return getApplicationContext();
+    }
+
+
+    public void onCheckedChanged(View view) {
+            boolean checked = ((RadioButton) view).isChecked();
+            switch(view.getId()) {
+                case R.id.rdbtn1:
+                    if (checked)
+                    {
+                        this.nom=((EditText)findViewById(R.id.edit_text)).getText().toString();
+                        ((TextView)findViewById(R.id.textView3)).setText("Bonjour "+nom+", merci de votre enthousiasme!");
+                        break;
+                    }
+                case R.id.rdbtn2:
+                    if (checked)
+                        this.nom=((EditText)findViewById(R.id.edit_text)).getText().toString();
+                        ((TextView)findViewById(R.id.textView3)).setText("Bonjour "+nom+", dommage mais t'as pas le choix");
+                        break;
+            }
+    }
+    public void onCheckBoxChanged(View view) {
+        if (((CheckBox) view).isChecked()) {
+            ((Button) findViewById(R.id.btn_verser_prec)).setVisibility(GONE);
+        } else {
+            ((Button) findViewById(R.id.btn_verser_prec)).setVisibility(View.VISIBLE);
+        }
     }
 
 }
