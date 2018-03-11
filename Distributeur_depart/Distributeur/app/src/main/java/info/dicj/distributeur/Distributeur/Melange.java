@@ -72,6 +72,14 @@ public class Melange implements Recette{
     public Recette getRecette(){
         return this;
     }
+
+    public ArrayList<Boisson> getBoissons(){
+        return  boissons;
+    }
+
+    public Saveur getSaveur(){
+        return  saveur;
+    }
     
     public boolean estPret(){
        return !this.boissons.isEmpty();

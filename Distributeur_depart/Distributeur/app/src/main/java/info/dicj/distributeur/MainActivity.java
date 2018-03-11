@@ -47,14 +47,12 @@ public class MainActivity extends AppCompatActivity {
         catch (AucunMelangeException e) {
             e.printStackTrace();
         }
-       /* catch (AucunDistribuableException e) {
+        catch (AucunDistribuableException e) {
             e.printStackTrace();
         }
         catch (DebordementMelangeException e) {
             e.printStackTrace();
         }
-*/
-
     }
 
     public void verser(View view) {

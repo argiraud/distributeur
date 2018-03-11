@@ -54,15 +54,73 @@ public class Distributeur {
         this.melangeCourant = new Melange();
     }
 
-    public Recette dupliquerMelange() throws AucunMelangeException {
-            if (this.melangePrecedent == null) {
+    public Recette dupliquerMelange() throws AucunMelangeException, AucunDistribuableException, DebordementMelangeException {
+        Melange melangeDuplique = new Melange();
+        String nom = "";
+        if (this.melangePrecedent == null) {
                 throw new AucunMelangeException();
             }
-            else {
-                this.melangeCourant = this.melangePrecedent;
-
-                return this.melangeCourant.getRecette();
+        else {
+            ArrayList<Boisson> boissons = melangePrecedent.getBoissons();
+            for (int i = 0; i<boissons.size(); i++){
+                nom = boissons.get(i).getNom();
+                switch (nom) {
+                    case "PEPSI":
+                        if (pepsi == 0) {
+                            throw new AucunDistribuableException();
+                        }
+                        melangeDuplique.ajouterBoisson(new Boisson(nom, "Je suis la description de " + nom));
+                        pepsi = pepsi - 1;
+                        break;
+                    case "ORANGEADE":
+                        if (orangeade == 0) {
+                            throw new AucunDistribuableException();
+                        }
+                        melangeDuplique.ajouterBoisson(new Boisson(nom, "Je suis la description de " + nom));
+                        orangeade = orangeade - 1;
+                        break;
+                    case "FRAISE":
+                        if (fraise == 0) {
+                            throw new AucunDistribuableException();
+                        }
+                        melangeDuplique.ajouterBoisson(new Boisson(nom, "Je suis la description de " + nom));
+                        fraise = fraise - 1;
+                        break;
+                    case "RACINETTE":
+                        if (racinette == 0) {
+                            throw new AucunDistribuableException();
+                        }
+                        melangeDuplique.ajouterBoisson(new Boisson(nom, "Je suis la description de " + nom));
+                        racinette = racinette - 1;
+                        break;
+                }
             }
+            nom = melangePrecedent.getSaveur().getNom();
+            switch (nom) {
+                case "GINGEMBRE":
+                    if (gingembre == 0) {
+                        throw new AucunDistribuableException();
+                    }
+                    melangeDuplique.ajouterSaveur(new Saveur(nom, "Je suis la description de " + nom));
+                    gingembre = gingembre - 1;
+                    break;
+                case "EPICE":
+                    if (epice == 0) {
+                        throw new AucunDistribuableException();
+                    }
+                    melangeDuplique.ajouterSaveur(new Saveur(nom, "Je suis la description de " + nom));
+                    epice = epice - 1;
+                    break;
+                case "BACON":
+                    if (bacon == 0) {
+                        throw new AucunDistribuableException();
+                    }
+                    melangeDuplique.ajouterSaveur(new Saveur(nom, "Je suis la description de " + nom));
+                    bacon = bacon - 1;
+                    break;
+            }
+                return melangeDuplique.getRecette();
+        }
     }
 
     public void ajouterBoisson(String nom) throws DebordementMelangeException, AucunDistribuableException {
