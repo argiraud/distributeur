@@ -20,8 +20,16 @@ public class Melange implements Recette{
     public void ajouterBoisson(Boisson boisson){
         if (nbBoissons<MAX_BOISSON){
             boisson.ajouter();
-            boissons.add(boisson);
+            if (boissons.size()==0){
 
+            }
+            else {
+                if (boisson.getNom() != boissons.get(1).getNom())
+                    boissons.add(boisson);
+                else{
+                        boissons.add(boisson);
+                }
+            }
         }
         else Log.i("DICJ", "Maximum de boissons atteint");
     }
@@ -45,6 +53,10 @@ public class Melange implements Recette{
         else{
             return "Melange : \n-Boissons : "+lesBoissons;
         }
+    }
+
+    public int getNbBoissons() {
+       return nbBoissons;
     }
     
     public Recette getRecette(){

@@ -119,9 +119,9 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.bFraise:      distributeur.ajouterBoisson("FRAISE");
                                         break;
             }
-        } /*catch (AucunDistribuableException e) {
+        } catch (AucunDistribuableException e) {
             e.printStackTrace();
-        } */
+        }
         catch (DebordementMelangeException e) {
             e.printStackTrace();
         }
