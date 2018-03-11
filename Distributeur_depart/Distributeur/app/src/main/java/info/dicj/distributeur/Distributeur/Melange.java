@@ -8,12 +8,14 @@ import java.util.Objects;
 public class Melange implements Recette{
     
     private int nbBoissons;
+    private boolean saveurAjoute;
     private final int MAX_BOISSON=2;
     private ArrayList<Boisson> boissons;
     private Saveur saveur;
     
     public Melange(){
         nbBoissons=0;
+        saveurAjoute = false;
         boissons=new ArrayList<>();
         saveur = null;
     }
@@ -21,16 +23,16 @@ public class Melange implements Recette{
     public void ajouterBoisson(Boisson boisson){
         if (nbBoissons<MAX_BOISSON){
             boisson.ajouter();
-            if (boissons.isEmpty()){
+
+            if (boissons.isEmpty())
                 boissons.add(boisson);
-            }
+
             else {
-                if (!Objects.equals(boisson.getNom(), boissons.get(0).getNom())){
+                if (!Objects.equals(boisson.getNom(), boissons.get(0).getNom()))
                     boissons.add(boisson);
-                }
-                else{
+
+                else
                         boissons.get(0).ajouter();
-                }
             }
             nbBoissons++;
         }
@@ -38,31 +40,35 @@ public class Melange implements Recette{
     }
     
     public void ajouterSaveur(Saveur saveur) {
-        if (this.saveur == null){
+        if (!saveurAjoute){
             this.saveur = saveur;
             this.saveur.ajouter();
+            saveurAjoute = true;
         }
         else Log.i("DICJ", "Maximum de saveur atteint");
     }
     
     public String getInformation(){
-        String lesBoissons = new String();
+        StringBuilder lesBoissons = new StringBuilder();
         for (int i=0; i<boissons.size(); i++) {
-            lesBoissons= lesBoissons+"  " + boissons.get(i).toString();
-
+            lesBoissons.append("  ").append(boissons.get(i).toString());
         }
-        if(this.saveur!=null) {
+        if(this.saveur!=null)
             return "Melange :\n- Boissons : " + lesBoissons + ")\n- Saveur : " + saveur.toString();
-        }
-        else{
+
+        else
             return "Melange : \n- Boissons : " + lesBoissons;
-        }
+
     }
 
     public int getNbBoissons() {
        return nbBoissons;
     }
-    
+
+    public boolean isSaveurAjoute() {
+        return saveurAjoute;
+    }
+
     public Recette getRecette(){
         return this;
     }

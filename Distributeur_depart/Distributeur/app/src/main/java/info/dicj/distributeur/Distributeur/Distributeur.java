@@ -31,7 +31,7 @@ public class Distributeur {
     }
 
     private void remplirDistributeur(){
-        this.pepsi = 2;
+        pepsi = 2;
         fraise = 2;
         racinette = 2;
         orangeade = 2;
@@ -40,8 +40,9 @@ public class Distributeur {
         gingembre = 2;
     }
 
-    public Recette melangerRecette() throws AucunMelangeException {
+    public Recette melangerRecette() throws AucunMelangeException, AucunDistribuableException {
         if (melangeCourant == null) throw new AucunMelangeException();
+        if (melangeCourant.getNbBoissons() == 0) throw new AucunDistribuableException();
         else {
             return melangeCourant.getRecette();
         }
@@ -104,29 +105,35 @@ public class Distributeur {
         }
     }
 
-    public void ajouterSaveur(String nom) throws DebordementMelangeException {
-            melangeCourant.ajouterSaveur(new Saveur(nom,"Je suis la description de "+nom));
-            switch (nom){
-                case "gingembre":
-                    if (gingembre == 0){
-
+    public void ajouterSaveur(String nom) throws DebordementMelangeException, AucunDistribuableException {
+        if (melangeCourant.isSaveurAjoute()){
+            Log.i("DICJ", "Distributeur.ajouterBoisson: Erreur + de 1 saveur");
+            throw new DebordementMelangeException();
+        }
+        else {
+            switch (nom) {
+                case "GINGEMBRE":
+                    if (gingembre == 0) {
+                        throw new AucunDistribuableException();
                     }
-                    gingembre = gingembre -1;
+                    melangeCourant.ajouterSaveur(new Saveur(nom, "Je suis la description de " + nom));
+                    gingembre = gingembre - 1;
                     break;
-                case "epice":
-                    if (epice == 0){
-
+                case "EPICE":
+                    if (epice == 0) {
+                        throw new AucunDistribuableException();
                     }
-                    epice = epice -1;
+                    melangeCourant.ajouterSaveur(new Saveur(nom, "Je suis la description de " + nom));
+                    epice = epice - 1;
                     break;
-                case "bacon":
-                    if (bacon == 0){
-
+                case "BACON":
+                    if (bacon == 0) {
+                        throw new AucunDistribuableException();
                     }
-                    bacon = bacon-1;
+                    melangeCourant.ajouterSaveur(new Saveur(nom, "Je suis la description de " + nom));
+                    bacon = bacon - 1;
                     break;
             }
-
-
+        }
     }
 }
