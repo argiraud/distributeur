@@ -7,6 +7,6 @@ public class Boisson extends Distribuable {
     }
 
     public String toString(){
-        return "Boisson: "+super.getNom()+" Description:"+super.getDescription()+" Quantité: "+super.getQuantite();
+        return "Boisson: "+super.getNom()+" Description: "+super.getDescription()+" Quantité: "+super.getQuantite();
     }
 }

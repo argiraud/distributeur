@@ -3,6 +3,7 @@ package info.dicj.distributeur.Distributeur;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Melange implements Recette{
     
@@ -20,16 +21,18 @@ public class Melange implements Recette{
     public void ajouterBoisson(Boisson boisson){
         if (nbBoissons<MAX_BOISSON){
             boisson.ajouter();
-            if (boissons.size()==0){
-
+            if (boissons.isEmpty()){
+                boissons.add(boisson);
             }
             else {
-                if (boisson.getNom() != boissons.get(1).getNom())
+                if (!Objects.equals(boisson.getNom(), boissons.get(0).getNom())){
                     boissons.add(boisson);
+                }
                 else{
-                        boissons.add(boisson);
+                        boissons.get(0).ajouter();
                 }
             }
+            nbBoissons++;
         }
         else Log.i("DICJ", "Maximum de boissons atteint");
     }
@@ -45,13 +48,14 @@ public class Melange implements Recette{
     public String getInformation(){
         String lesBoissons = new String();
         for (int i=0; i<boissons.size(); i++) {
-            lesBoissons= boissons.get(i).toString();
+            lesBoissons= lesBoissons+"  " + boissons.get(i).toString();
+
         }
         if(this.saveur!=null) {
             return "Melange :\n- Boissons : " + lesBoissons + ")\n- Saveur : " + saveur.toString();
         }
         else{
-            return "Melange : \n-Boissons : "+lesBoissons;
+            return "Melange : \n- Boissons : " + lesBoissons;
         }
     }
 
