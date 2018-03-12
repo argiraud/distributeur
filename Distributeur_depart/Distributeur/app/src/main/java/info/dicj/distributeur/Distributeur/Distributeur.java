@@ -69,30 +69,31 @@ public class Distributeur {
                         if (pepsi == 0) {
                             throw new AucunDistribuableException();
                         }
-                        melangeDuplique.ajouterBoisson(new Boisson(nom, "Je suis la description de " + nom));
+                        melangeDuplique.ajouterBoisson(new Boisson(nom, "Je suis la description de " + nom,boissons.get(i).getQuantite()-1));
                         pepsi = pepsi - 1;
                         break;
                     case "ORANGEADE":
                         if (orangeade == 0) {
                             throw new AucunDistribuableException();
                         }
-                        melangeDuplique.ajouterBoisson(new Boisson(nom, "Je suis la description de " + nom));
+                        melangeDuplique.ajouterBoisson(new Boisson(nom, "Je suis la description de " + nom,boissons.get(i).getQuantite()-1));
                         orangeade = orangeade - 1;
                         break;
                     case "FRAISE":
                         if (fraise == 0) {
                             throw new AucunDistribuableException();
                         }
-                        melangeDuplique.ajouterBoisson(new Boisson(nom, "Je suis la description de " + nom));
+                        melangeDuplique.ajouterBoisson(new Boisson(nom, "Je suis la description de " + nom,boissons.get(i).getQuantite()-1));
                         fraise = fraise - 1;
                         break;
                     case "RACINETTE":
                         if (racinette == 0) {
                             throw new AucunDistribuableException();
                         }
-                        melangeDuplique.ajouterBoisson(new Boisson(nom, "Je suis la description de " + nom));
+                        melangeDuplique.ajouterBoisson(new Boisson(nom, "Je suis la description de " + nom,boissons.get(i).getQuantite()-1));
                         racinette = racinette - 1;
                         break;
+
                 }
             }
             if (melangePrecedent.isSaveurAjoute()) {

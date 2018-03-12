@@ -5,6 +5,7 @@ public class Boisson extends Distribuable {
     public Boisson(String nom, String description){
         super(0,nom,description);
     }
+    public Boisson(String nom, String description, int quantite){super(quantite,nom,description);}
 
     public String toString(){
         return "Boisson: "+super.getNom()+" Description: "+super.getDescription()+" Quantité: "+super.getQuantite();

@@ -75,11 +75,10 @@ public class MainActivity extends AppCompatActivity {
     public void reverser(View view) {
 
         Log.i("DICJ", "MainActivity.reverser");
-
+        this.creerNotification(view);
 
         try {
-            distributeur.dupliquerMelange();
-            verser(view);
+            afficherRecette(distributeur.dupliquerMelange());
         }
         catch (AucunMelangeException e) {
             e.printStackTrace();
