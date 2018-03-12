@@ -8,4 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="UQAC" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@android:color/holo_red_light</item>
+        <item name="colorAccent">?android:attr/colorPressedHighlight</item>
+    </style>
+
+    <style name="UQACDERIVE" parent="UQAC">
+        <item name="colorPrimary">@android:color/holo_green_light</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@android:color/holo_orange_dark</item>
+    </style>
+
 </resources>
