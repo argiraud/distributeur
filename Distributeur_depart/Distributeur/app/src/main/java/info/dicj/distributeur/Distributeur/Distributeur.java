@@ -31,7 +31,7 @@ public class Distributeur {
     }
 
     private void remplirDistributeur(){
-        pepsi = 2;
+        pepsi = 10;
         fraise = 2;
         racinette = 2;
         orangeade = 2;
@@ -95,29 +95,31 @@ public class Distributeur {
                         break;
                 }
             }
-            nom = melangePrecedent.getSaveur().getNom();
-            switch (nom) {
-                case "GINGEMBRE":
-                    if (gingembre == 0) {
-                        throw new AucunDistribuableException();
-                    }
-                    melangeDuplique.ajouterSaveur(new Saveur(nom, "Je suis la description de " + nom));
-                    gingembre = gingembre - 1;
-                    break;
-                case "EPICE":
-                    if (epice == 0) {
-                        throw new AucunDistribuableException();
-                    }
-                    melangeDuplique.ajouterSaveur(new Saveur(nom, "Je suis la description de " + nom));
-                    epice = epice - 1;
-                    break;
-                case "BACON":
-                    if (bacon == 0) {
-                        throw new AucunDistribuableException();
-                    }
-                    melangeDuplique.ajouterSaveur(new Saveur(nom, "Je suis la description de " + nom));
-                    bacon = bacon - 1;
-                    break;
+            if (melangePrecedent.isSaveurAjoute()) {
+                nom = melangePrecedent.getSaveur().getNom();
+                switch (nom) {
+                    case "GINGEMBRE":
+                        if (gingembre == 0) {
+                            throw new AucunDistribuableException();
+                        }
+                        melangeDuplique.ajouterSaveur(new Saveur(nom, "Je suis la description de " + nom));
+                        gingembre = gingembre - 1;
+                        break;
+                    case "EPICE":
+                        if (epice == 0) {
+                            throw new AucunDistribuableException();
+                        }
+                        melangeDuplique.ajouterSaveur(new Saveur(nom, "Je suis la description de " + nom));
+                        epice = epice - 1;
+                        break;
+                    case "BACON":
+                        if (bacon == 0) {
+                            throw new AucunDistribuableException();
+                        }
+                        melangeDuplique.ajouterSaveur(new Saveur(nom, "Je suis la description de " + nom));
+                        bacon = bacon - 1;
+                        break;
+                }
             }
                 return melangeDuplique.getRecette();
         }
