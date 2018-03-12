@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Distributor</string>
+    <string name="gingembre">Ginger</string>
+    <string name="bacon">Bacon</string>
+    <string name="epice">Spice</string>
+    <string name="les_saveurs">Flavours</string>
+    <string name="fraise">Strawberry</string>
+    <string name="racinette">Root Beer</string>
+    <string name="orangeade">Orangeade</string>
+    <string name="pepsi">Pepsi</string>
+    <string name="verser_melange_precedent">Pour (previous mixture)</string>
+    <string name="super_distributeur_dicj">Super Distributor</string>
+    <string name="participer_au_sondage">Participate in the survey</string>
+    <string name="inscrire_votre_nom">Enter your name</string>
+    <string name="j_adore_le_cours">I\'m loving the course</string>
+    <string name="je_n_adore_pas_le_cours">I don\'t like the course</string>
+    <string name="d_sactiver_l_option_verser_m_lange_pr_c_dent">Disable pour option</string>
+    <string name="les_op_rations">Operations</string>
+    <string name="nouveau">New</string>
+    <string name="verser">Pour</string>
+    <string name="image_logo">image_logo</string>
+    <string name="les_boissons">Drinks</string>
+</resources>

@@ -30,7 +30,7 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Super Distributeur DICJ"
+                android:text="@string/super_distributeur_dicj"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="24sp" />
 
@@ -38,7 +38,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="177dp"
                 android:background="@color/colorPrimaryDark"
-                android:src="@drawable/logodicj" />
+                android:src="@drawable/logodicj"
+                android:contentDescription="@string/image_logo" />
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
@@ -49,7 +50,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Participer au sondage"
+                android:text="@string/participer_au_sondage"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold" />
             <EditText
@@ -57,7 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
-                android:hint="Inscrire votre nom"/>
+                android:hint="@string/inscrire_votre_nom"/>
             <RadioGroup
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -68,14 +69,14 @@
                 android:onClick="onCheckedChanged"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="J'adore le cours"/>
+                android:text="@string/j_adore_le_cours"/>
 
             <RadioButton
                 android:id="@+id/rdbtn2"
                 android:onClick="onCheckedChanged"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Je n'adore pas le cours"/>
+                android:text="@string/je_n_adore_pas_le_cours"/>
             </RadioGroup>
 
             <TextView
@@ -88,7 +89,7 @@
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Désactiver l'option verser (mélange précédent)"
+                android:text="@string/d_sactiver_l_option_verser_m_lange_pr_c_dent"
                 android:onClick="onCheckBoxChanged"/>
 
             <TableLayout
@@ -103,7 +104,7 @@
                         android:layout_height="wrap_content"
                         android:onClick="ajouterBoisson"
                         android:textColor="@color/colorPrimaryDark"
-                        android:text="Les boissons" />
+                        android:text="@string/les_boissons" />
 
                 </TableRow>
 
@@ -187,7 +188,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="@dimen/activity_vertical_margin"
                 android:textColor="@color/colorPrimaryDark"
-                android:text="Les opérations" />
+                android:text="@string/les_op_rations" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -198,13 +199,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="nouveau"
-                    android:text="Nouveau" />
+                    android:text="@string/nouveau" />
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="verser"
-                    android:text="Verser" />
+                    android:text="@string/verser" />
 
             </LinearLayout>
         </LinearLayout>

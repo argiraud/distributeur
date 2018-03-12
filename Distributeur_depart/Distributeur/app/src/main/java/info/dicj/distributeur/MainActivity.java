@@ -1,6 +1,12 @@
 package info.dicj.distributeur;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
     private Distributeur distributeur;
     private String nom;
+    private static final int ID_NOTIFICATION = 1234;
+    private NotificationManager nm;
+    private int count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +42,34 @@ public class MainActivity extends AppCompatActivity {
          distributeur = new Distributeur();
 
         Log.i("DICJ", "MainActivity.oncreate");
+        nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+
+    }
+    public void creerNotification(View view) {
+
+        // Cette section sera revue lors de la semaine #8
+        Intent intent = new Intent(this, MainActivity.class);
+        PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
+        Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
+        Notification n  = new Notification.Builder(this)
+                .setContentTitle("Félicitation !!!")
+                .setContentText("C'est un bien beau mélange")
+                .setPriority(Notification.PRIORITY_HIGH)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentIntent(pIntent)
+                .setNumber(count++)
+                .setSound(soundUri)
+                .setAutoCancel(true)
+                .setDefaults(Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE)
+
+                .build();
+        try{
+            nm.notify(ID_NOTIFICATION, n);
+        }
+        catch(Exception e){
+            Log.i("DICJ", e.getMessage(), e);
+        }
     }
 
     public void reverser(View view) {
@@ -58,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
     public void verser(View view) {
 
         Log.i("DICJ", "MainActivity.verser");
-
+        this.creerNotification(view);
 
         try {
 

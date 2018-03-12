@@ -12,7 +12,7 @@
     tools:context="info.dicj.distributeur.MainActivity">
 
     <TextView
-        android:text="Super Distributeur du FUTUR DICJ"
+        android:text="@string/super_distributeur_dicj"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView" />
@@ -23,7 +23,7 @@
         android:layout_marginTop="30dp">
 
         <TextView
-            android:text="Les boissons"
+            android:text="@string/les_boissons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_row="0"
@@ -33,7 +33,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pepsi"
+            android:text="@string/pepsi"
             android:id="@+id/bPepsi"
             android:layout_row="1"
             android:layout_column="0"
@@ -42,7 +42,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Orangeade"
+            android:text="@string/orangeade"
             android:id="@+id/bOrangeade"
             android:layout_row="1"
             android:layout_column="1"
@@ -51,7 +51,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Racinette"
+            android:text="@string/racinette"
             android:id="@+id/bRacinette"
             android:layout_row="2"
             android:layout_column="0"
@@ -60,7 +60,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fraise"
+            android:text="@string/fraise"
             android:id="@+id/bFraise"
             android:layout_row="2"
             android:layout_column="1"
@@ -73,7 +73,7 @@
         android:layout_marginTop="30dp">
 
         <TextView
-            android:text="Les saveurs"
+            android:text="@string/les_saveurs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_row="0"
@@ -82,7 +82,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Épice"
+            android:text="@string/epice"
             android:id="@+id/sEpice"
             android:layout_row="1"
             android:layout_column="0"
@@ -91,7 +91,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bacon"
+            android:text="@string/bacon"
             android:id="@+id/sBacon"
             android:layout_row="1"
             android:layout_column="1"
@@ -100,7 +100,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gingembre"
+            android:text="@string/gingembre"
             android:id="@+id/sGingembre"
             android:layout_row="1"
             android:layout_column="2"
@@ -110,26 +110,26 @@
 
     <TextView
         android:paddingTop="@dimen/activity_vertical_margin"
-        android:text="Les opérations"
+        android:text="@string/les_op_rations"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nouveau"
+        android:text="@string/nouveau"
         android:onClick="nouveau" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Verser"
+        android:text="@string/verser"
         android:onClick="verser" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Verser (mélange précédent)"
+        android:text="@string/verser_melange_precedent"
         android:onClick="reverser" />
 
 </LinearLayout>

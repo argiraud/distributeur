@@ -9,4 +9,15 @@
     <string name="orangeade">Orangeade</string>
     <string name="pepsi">Pepsi</string>
     <string name="verser_melange_precedent">Verser (mélange précédent)</string>
+    <string name="super_distributeur_dicj">Super Distributeur DICJ</string>
+    <string name="participer_au_sondage">Participer au sondage</string>
+    <string name="inscrire_votre_nom">Inscrire votre nom</string>
+    <string name="j_adore_le_cours">J\'adore le cours</string>
+    <string name="je_n_adore_pas_le_cours">Je n\'adore pas le cours</string>
+    <string name="d_sactiver_l_option_verser_m_lange_pr_c_dent">Désactiver l\'option verser (mélange précédent)</string>
+    <string name="les_op_rations">Les opérations</string>
+    <string name="nouveau">Nouveau</string>
+    <string name="verser">Verser</string>
+    <string name="image_logo">image_logo</string>
+    <string name="les_boissons">Les boissons</string>
 </resources>
