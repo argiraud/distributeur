@@ -113,6 +113,7 @@
                 <TableRow>
 
                     <Button
+                        style="@style/UQAC.Bouton"
                         android:id="@+id/bPepsi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -153,10 +154,11 @@
                 android:layout_marginTop="30dp">
 
                 <TextView
+                    style="@style/UQAC.Texte"
                     android:id="@+id/text_les_saveurs"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorPrimaryDark"
+
                     android:text="@string/les_saveurs" />
 
                 <Button
